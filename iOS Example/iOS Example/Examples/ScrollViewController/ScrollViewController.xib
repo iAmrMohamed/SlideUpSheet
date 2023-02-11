@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScrollViewController" customModule="iOS_Example" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ClK-XR-adv">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zfg-K0-5ym">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="366.33333333333331"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="figure.australian.football" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Bvo-PH-Qo5">
+                                    <rect key="frame" x="97.666666666666686" y="101.00000000000001" width="198" height="196.33333333333337"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="150"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Goooal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yz-ed-MRf">
+                                    <rect key="frame" x="148.66666666666666" y="308" width="96" height="38.333333333333314"/>
+                                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="35"/>
+                                    <color key="textColor" systemColor="systemBlueColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <directionalEdgeInsets key="directionalLayoutMargins" top="50" leading="20" bottom="20" trailing="20"/>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="zfg-K0-5ym" firstAttribute="leading" secondItem="LZZ-HV-hBe" secondAttribute="leading" id="8iu-kI-p5z"/>
+                        <constraint firstItem="zfg-K0-5ym" firstAttribute="width" secondItem="mV4-rs-GI5" secondAttribute="width" id="KjS-Ed-bHI"/>
+                        <constraint firstItem="zfg-K0-5ym" firstAttribute="bottom" secondItem="LZZ-HV-hBe" secondAttribute="bottom" id="LpP-KQ-S3L"/>
+                        <constraint firstItem="zfg-K0-5ym" firstAttribute="trailing" secondItem="LZZ-HV-hBe" secondAttribute="trailing" id="V0P-KV-p9c"/>
+                        <constraint firstItem="zfg-K0-5ym" firstAttribute="top" secondItem="LZZ-HV-hBe" secondAttribute="top" id="mFv-rp-5WI"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="LZZ-HV-hBe"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="mV4-rs-GI5"/>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="ClK-XR-adv" secondAttribute="bottom" id="Des-lc-Yeg"/>
+                <constraint firstItem="ClK-XR-adv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Gj8-C4-i1l"/>
+                <constraint firstItem="ClK-XR-adv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TVi-zG-rrG"/>
+                <constraint firstItem="ClK-XR-adv" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="z44-m8-Cq6"/>
+            </constraints>
+            <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="figure.australian.football" catalog="system" width="128" height="124"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

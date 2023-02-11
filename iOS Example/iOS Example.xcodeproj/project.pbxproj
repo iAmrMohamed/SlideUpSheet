@@ -13,6 +13,15 @@
 		2D67792729964D7E005F2561 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D67792529964D7E005F2561 /* Main.storyboard */; };
 		2D67792929964D7F005F2561 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D67792829964D7F005F2561 /* Assets.xcassets */; };
 		2D67792C29964D7F005F2561 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D67792A29964D7F005F2561 /* LaunchScreen.storyboard */; };
+		2DAC77B52997FB0D0048FD8E /* SheetPresentationController in Frameworks */ = {isa = PBXBuildFile; productRef = 2DAC77B42997FB0D0048FD8E /* SheetPresentationController */; };
+		2DAC77B92997FFD40048FD8E /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAC77B72997FFD40048FD8E /* CustomViewController.swift */; };
+		2DAC77BA2997FFD40048FD8E /* CustomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DAC77B82997FFD40048FD8E /* CustomViewController.xib */; };
+		2DAC77BF2997FFF40048FD8E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAC77BD2997FFF40048FD8E /* TableViewController.swift */; };
+		2DAC77C02997FFF40048FD8E /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DAC77BE2997FFF40048FD8E /* TableViewController.xib */; };
+		2DAC77C4299800130048FD8E /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAC77C2299800130048FD8E /* ScrollViewController.swift */; };
+		2DAC77C5299800130048FD8E /* ScrollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DAC77C3299800130048FD8E /* ScrollViewController.xib */; };
+		2DAC77C92998159D0048FD8E /* BaseInheritedClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAC77C72998159D0048FD8E /* BaseInheritedClassViewController.swift */; };
+		2DAC77CA2998159D0048FD8E /* BaseInheritedClassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DAC77C82998159D0048FD8E /* BaseInheritedClassViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +33,15 @@
 		2D67792829964D7F005F2561 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D67792B29964D7F005F2561 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D67792D29964D7F005F2561 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2D67793429964DA0005F2561 /* SheetPresentationController */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SheetPresentationController; path = ..; sourceTree = "<group>"; };
+		2DAC77B32997FB060048FD8E /* SheetPresentationController */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SheetPresentationController; path = ..; sourceTree = "<group>"; };
+		2DAC77B72997FFD40048FD8E /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
+		2DAC77B82997FFD40048FD8E /* CustomViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomViewController.xib; sourceTree = "<group>"; };
+		2DAC77BD2997FFF40048FD8E /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		2DAC77BE2997FFF40048FD8E /* TableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
+		2DAC77C2299800130048FD8E /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
+		2DAC77C3299800130048FD8E /* ScrollViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollViewController.xib; sourceTree = "<group>"; };
+		2DAC77C72998159D0048FD8E /* BaseInheritedClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInheritedClassViewController.swift; sourceTree = "<group>"; };
+		2DAC77C82998159D0048FD8E /* BaseInheritedClassViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseInheritedClassViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,18 +49,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DAC77B52997FB0D0048FD8E /* SheetPresentationController in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D3597932997F45A005B3518 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2D67791329964D7E005F2561 = {
 			isa = PBXGroup;
 			children = (
-				2D67793329964DA0005F2561 /* Packages */,
+				2DAC77B22997FB060048FD8E /* Packages */,
 				2D67791E29964D7E005F2561 /* iOS Example */,
 				2D67791D29964D7E005F2561 /* Products */,
+				2D3597932997F45A005B3518 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +87,7 @@
 				2D67791F29964D7E005F2561 /* AppDelegate.swift */,
 				2D67792129964D7E005F2561 /* SceneDelegate.swift */,
 				2D67792329964D7E005F2561 /* ViewController.swift */,
+				2DAC77B62997FFAA0048FD8E /* Examples */,
 				2D67792529964D7E005F2561 /* Main.storyboard */,
 				2D67792829964D7F005F2561 /* Assets.xcassets */,
 				2D67792A29964D7F005F2561 /* LaunchScreen.storyboard */,
@@ -69,12 +96,59 @@
 			path = "iOS Example";
 			sourceTree = "<group>";
 		};
-		2D67793329964DA0005F2561 /* Packages */ = {
+		2DAC77B22997FB060048FD8E /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				2D67793429964DA0005F2561 /* SheetPresentationController */,
+				2DAC77B32997FB060048FD8E /* SheetPresentationController */,
 			);
 			name = Packages;
+			sourceTree = "<group>";
+		};
+		2DAC77B62997FFAA0048FD8E /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				2DAC77C12997FFFE0048FD8E /* ScrollViewController */,
+				2DAC77BC2997FFE40048FD8E /* TableViewController */,
+				2DAC77BB2997FFD80048FD8E /* CustomViewController */,
+				2DAC77C6299815840048FD8E /* BaseInheritedClassViewController */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
+		2DAC77BB2997FFD80048FD8E /* CustomViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2DAC77B82997FFD40048FD8E /* CustomViewController.xib */,
+				2DAC77B72997FFD40048FD8E /* CustomViewController.swift */,
+			);
+			path = CustomViewController;
+			sourceTree = "<group>";
+		};
+		2DAC77BC2997FFE40048FD8E /* TableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2DAC77BE2997FFF40048FD8E /* TableViewController.xib */,
+				2DAC77BD2997FFF40048FD8E /* TableViewController.swift */,
+			);
+			path = TableViewController;
+			sourceTree = "<group>";
+		};
+		2DAC77C12997FFFE0048FD8E /* ScrollViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2DAC77C3299800130048FD8E /* ScrollViewController.xib */,
+				2DAC77C2299800130048FD8E /* ScrollViewController.swift */,
+			);
+			path = ScrollViewController;
+			sourceTree = "<group>";
+		};
+		2DAC77C6299815840048FD8E /* BaseInheritedClassViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2DAC77C82998159D0048FD8E /* BaseInheritedClassViewController.xib */,
+				2DAC77C72998159D0048FD8E /* BaseInheritedClassViewController.swift */,
+			);
+			path = BaseInheritedClassViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -93,6 +167,9 @@
 			dependencies = (
 			);
 			name = "iOS Example";
+			packageProductDependencies = (
+				2DAC77B42997FB0D0048FD8E /* SheetPresentationController */,
+			);
 			productName = "iOS Example";
 			productReference = 2D67791C29964D7E005F2561 /* iOS Example.app */;
 			productType = "com.apple.product-type.application";
@@ -135,9 +212,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DAC77CA2998159D0048FD8E /* BaseInheritedClassViewController.xib in Resources */,
 				2D67792C29964D7F005F2561 /* LaunchScreen.storyboard in Resources */,
 				2D67792929964D7F005F2561 /* Assets.xcassets in Resources */,
 				2D67792729964D7E005F2561 /* Main.storyboard in Resources */,
+				2DAC77C02997FFF40048FD8E /* TableViewController.xib in Resources */,
+				2DAC77BA2997FFD40048FD8E /* CustomViewController.xib in Resources */,
+				2DAC77C5299800130048FD8E /* ScrollViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,9 +229,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DAC77C92998159D0048FD8E /* BaseInheritedClassViewController.swift in Sources */,
 				2D67792429964D7E005F2561 /* ViewController.swift in Sources */,
+				2DAC77C4299800130048FD8E /* ScrollViewController.swift in Sources */,
 				2D67792029964D7E005F2561 /* AppDelegate.swift in Sources */,
 				2D67792229964D7E005F2561 /* SceneDelegate.swift in Sources */,
+				2DAC77BF2997FFF40048FD8E /* TableViewController.swift in Sources */,
+				2DAC77B92997FFD40048FD8E /* CustomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +451,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2DAC77B42997FB0D0048FD8E /* SheetPresentationController */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SheetPresentationController;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2D67791429964D7E005F2561 /* Project object */;
 }
