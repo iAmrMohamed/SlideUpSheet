@@ -7,13 +7,13 @@
 
 import UIKit
 
-public class SheetBaseViewController: UIViewController {
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+open class SheetBaseViewController: UIViewController {
+    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         commonInit()
     }
     
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         super.init(coder: coder)
         commonInit()
     }
