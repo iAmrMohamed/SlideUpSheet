@@ -111,7 +111,7 @@ public class SheetPresentationController: UIPresentationController {
         
         var height: CGFloat
         if let scrollView = scrollView {
-            let contentSize = scrollView.contentSize.height + containerView.safeAreaInsets.bottom
+            let contentSize = scrollView.contentSize.height + scrollView.adjustedContentInset.top + scrollView.adjustedContentInset.bottom
             height = min(frame.height * 0.9, contentSize)
         } else {
             height = min(frame.height * 0.9, presentedViewController.preferredContentSize.height)
