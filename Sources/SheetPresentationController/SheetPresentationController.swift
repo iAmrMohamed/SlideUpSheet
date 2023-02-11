@@ -25,7 +25,7 @@
 import UIKit
 import Combine
 
-class SheetPresentationController: UIPresentationController {
+public class SheetPresentationController: UIPresentationController {
     private struct Constants {
         static let dismissVelocityLimit = CGFloat(500)
         static let handleViewSize = CGSize(width: 50, height: 5)
@@ -64,11 +64,15 @@ class SheetPresentationController: UIPresentationController {
         return view
     }()
     
-    override var shouldPresentInFullscreen: Bool {
+    public override var shouldPresentInFullscreen: Bool {
         true
     }
     
-    override func presentationTransitionWillBegin() {
+    public override init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
+        super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
+    }
+    
+    public override func presentationTransitionWillBegin() {
         super.presentationTransitionWillBegin()
         
         registerKeyboardObservers()
@@ -90,7 +94,7 @@ class SheetPresentationController: UIPresentationController {
         })
     }
     
-    override func dismissalTransitionWillBegin() {
+    public override func dismissalTransitionWillBegin() {
         super.dismissalTransitionWillBegin()
         
         rubbingView.removeFromSuperview()
@@ -99,7 +103,7 @@ class SheetPresentationController: UIPresentationController {
         })
     }
     
-    override var frameOfPresentedViewInContainerView: CGRect {
+    public override var frameOfPresentedViewInContainerView: CGRect {
         guard let containerView = containerView else { return .zero }
         var frame = containerView.frame
         
@@ -122,7 +126,7 @@ class SheetPresentationController: UIPresentationController {
         return frame
     }
     
-    override func containerViewWillLayoutSubviews() {
+    public override func containerViewWillLayoutSubviews() {
         super.containerViewWillLayoutSubviews()
         guard let presentedView, presentedView.transform.isIdentity else {
             return
@@ -137,11 +141,11 @@ class SheetPresentationController: UIPresentationController {
         }
     }
     
-    override func preferredContentSizeDidChange(forChildContentContainer _: UIContentContainer) {
+    public override func preferredContentSizeDidChange(forChildContentContainer _: UIContentContainer) {
         containerView?.setNeedsLayout()
     }
     
-    override func systemLayoutFittingSizeDidChange(forChildContentContainer _: UIContentContainer) {
+    public override func systemLayoutFittingSizeDidChange(forChildContentContainer _: UIContentContainer) {
         containerView?.setNeedsLayout()
     }
 }
@@ -314,7 +318,7 @@ private extension SheetPresentationController {
 // MARK: - UIGestureRecognizerDelegate
 
 extension SheetPresentationController: UIGestureRecognizerDelegate {
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         guard let pan = gestureRecognizer as? UIPanGestureRecognizer, let scrollView = scrollView else {
             return true
         }
@@ -336,7 +340,7 @@ extension SheetPresentationController: UIGestureRecognizerDelegate {
         return false
     }
     
-    func gestureRecognizer(_: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    public func gestureRecognizer(_: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         scrollView?.panGestureRecognizer == otherGestureRecognizer
     }
 }
