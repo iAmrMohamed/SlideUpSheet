@@ -20,4 +20,8 @@ class CustomViewController: UIViewController {
         let height = view.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
         preferredContentSize = .init(width: view.frame.width, height: height)
     }
+    
+    @IBAction func dismissButtonTapped(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
 }

@@ -29,18 +29,25 @@ class ViewController: UITableViewController {
     private func presentCustomLayoutExample() {
         let dvc = CustomViewController()
         dvc.modalPresentationStyle = .custom
-        dvc.transitioningDelegate = SlideUpSheetSharedTransitioningDelegate.sharedDelegate()
+        dvc.transitioningDelegate = self
         present(dvc, animated: true)
     }
     
     private func presentTableViewExample() {
         let dvc = TableViewController()
         dvc.modalPresentationStyle = .custom
-        dvc.transitioningDelegate = SlideUpSheetSharedTransitioningDelegate.sharedDelegate()
+        dvc.transitioningDelegate = self
         present(dvc, animated: true)
     }
     
     private func presentScrollViewExample() {
+        let dvc = ScrollViewController()
+        dvc.modalPresentationStyle = .custom
+        dvc.transitioningDelegate = self
+        present(dvc, animated: true)
+    }
+    
+    private func presentScrollUsingTheSharedTransitioningDelegateViewExample() {
         let dvc = ScrollViewController()
         dvc.modalPresentationStyle = .custom
         dvc.transitioningDelegate = SlideUpSheetSharedTransitioningDelegate.sharedDelegate()
@@ -53,5 +60,11 @@ class ViewController: UITableViewController {
         // automatically in the SheetBaseViewController
         let dvc = BaseInheritedClassViewController()
         present(dvc, animated: true)
+    }
+}
+
+extension ViewController: UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        SlideUpSheetPresentationController(presentedViewController: presented, presenting: presenting)
     }
 }

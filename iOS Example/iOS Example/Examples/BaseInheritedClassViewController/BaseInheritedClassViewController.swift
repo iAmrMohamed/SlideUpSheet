@@ -17,7 +17,10 @@ class BaseInheritedClassViewController: SlideUpSheetBaseViewController {
         slideUpSheet.allowsDismissing = false
     }
 
-
+    @IBAction func dismissButtonTapped(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 
