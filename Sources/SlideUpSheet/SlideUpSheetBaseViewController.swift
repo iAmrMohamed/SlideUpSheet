@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SlideUpSheetBaseViewController.swift
 //  
 //
 //  Created by Amr Mohamed on 11/02/2023.
@@ -7,13 +7,17 @@
 
 import UIKit
 
-open class SheetBaseViewController: UIViewController {
+open class SlideUpSheetBaseViewController: UIViewController {
+    public convenience init() {
+        self.init(nibName: nil, bundle: nil)
+    }
+    
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         commonInit()
     }
     
-    public required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
         commonInit()
     }
@@ -24,8 +28,8 @@ open class SheetBaseViewController: UIViewController {
     }
 }
 
-extension SheetBaseViewController: UIViewControllerTransitioningDelegate {
+extension SlideUpSheetBaseViewController: UIViewControllerTransitioningDelegate {
     public func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        SheetPresentationController(presentedViewController: presented, presenting: presenting)
+        SlideUpSheetPresentationController(presentedViewController: presented, presenting: presenting)
     }
 }

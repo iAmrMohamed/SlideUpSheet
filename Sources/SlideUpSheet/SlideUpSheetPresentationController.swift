@@ -1,5 +1,5 @@
 //
-//  SheetPresentationController.swift
+//  SlideUpSheetPresentationController.swift
 //
 //  Copyright (c) 2020 Amr Mohamed (https://github.com/iAmrMohamed)
 //
@@ -25,7 +25,7 @@
 import UIKit
 import Combine
 
-public class SheetPresentationController: UIPresentationController {
+class SlideUpSheetPresentationController: UIPresentationController {
     private struct Constants {
         static let dismissVelocityLimit = CGFloat(500)
         static let handleViewSize = CGSize(width: 50, height: 5)
@@ -64,15 +64,11 @@ public class SheetPresentationController: UIPresentationController {
         return view
     }()
     
-    public override var shouldPresentInFullscreen: Bool {
+    override var shouldPresentInFullscreen: Bool {
         true
     }
     
-    public override init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
-        super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
-    }
-    
-    public override func presentationTransitionWillBegin() {
+    override func presentationTransitionWillBegin() {
         super.presentationTransitionWillBegin()
         
         registerKeyboardObservers()
@@ -94,7 +90,7 @@ public class SheetPresentationController: UIPresentationController {
         })
     }
     
-    public override func dismissalTransitionWillBegin() {
+    override func dismissalTransitionWillBegin() {
         super.dismissalTransitionWillBegin()
         
         rubbingView.removeFromSuperview()
@@ -103,7 +99,7 @@ public class SheetPresentationController: UIPresentationController {
         })
     }
     
-    public override var frameOfPresentedViewInContainerView: CGRect {
+    override var frameOfPresentedViewInContainerView: CGRect {
         guard let containerView = containerView else { return .zero }
         var frame = containerView.frame
         
@@ -111,7 +107,7 @@ public class SheetPresentationController: UIPresentationController {
         
         var height: CGFloat
         if let scrollView = scrollView {
-            let contentSize = scrollView.contentSize.height + scrollView.adjustedContentInset.top + scrollView.adjustedContentInset.bottom
+            let contentSize = scrollView.contentSize.height + containerView.safeAreaInsets.bottom
             height = min(frame.height * 0.9, contentSize)
         } else {
             height = min(frame.height * 0.9, presentedViewController.preferredContentSize.height)
@@ -126,7 +122,7 @@ public class SheetPresentationController: UIPresentationController {
         return frame
     }
     
-    public override func containerViewWillLayoutSubviews() {
+    override func containerViewWillLayoutSubviews() {
         super.containerViewWillLayoutSubviews()
         guard let presentedView, presentedView.transform.isIdentity else {
             return
@@ -141,16 +137,16 @@ public class SheetPresentationController: UIPresentationController {
         }
     }
     
-    public override func preferredContentSizeDidChange(forChildContentContainer _: UIContentContainer) {
+    override func preferredContentSizeDidChange(forChildContentContainer _: UIContentContainer) {
         containerView?.setNeedsLayout()
     }
     
-    public override func systemLayoutFittingSizeDidChange(forChildContentContainer _: UIContentContainer) {
+    override func systemLayoutFittingSizeDidChange(forChildContentContainer _: UIContentContainer) {
         containerView?.setNeedsLayout()
     }
 }
 
-extension SheetPresentationController {
+extension SlideUpSheetPresentationController {
     private func setupPresentedView(_ presentedView: UIView) {
         presentedView.layer.cornerRadius = 15.0
         presentedView.layer.masksToBounds = true
@@ -174,7 +170,7 @@ extension SheetPresentationController {
     }
 }
 
-extension SheetPresentationController {
+extension SlideUpSheetPresentationController {
     private func addDismissPanGestureTo(view: UIView) {
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panning))
         panGesture.delegate = self
@@ -184,7 +180,7 @@ extension SheetPresentationController {
 
 // MARK: - Tacking ScrollView
 
-extension SheetPresentationController {
+extension SlideUpSheetPresentationController {
     public func setupTackingScrollView(_ scrollView: UIScrollView) {
         self.scrollView = scrollView
         scrollView.contentInsetAdjustmentBehavior = .always
@@ -197,7 +193,7 @@ extension SheetPresentationController {
 
 // MARK: - DimmingView Setup
 
-extension SheetPresentationController {
+extension SlideUpSheetPresentationController {
     private func setupDimmingView(containerView: UIView) {
         containerView.insertSubview(dimmingView, at: 0)
         
@@ -222,7 +218,7 @@ extension SheetPresentationController {
 
 // MARK: - RubbingView Setup
 
-extension SheetPresentationController {
+extension SlideUpSheetPresentationController {
     private func setupRubbingView(containerView: UIView) {
         rubbingView.backgroundColor = presentedView?.backgroundColor
         
@@ -236,7 +232,7 @@ extension SheetPresentationController {
 
 // MARK: - HandleView Setup
 
-extension SheetPresentationController {
+extension SlideUpSheetPresentationController {
     private func setupHandleView(presentedView: UIView) {
         presentedView.addSubview(handleView)
         
@@ -251,7 +247,7 @@ extension SheetPresentationController {
 
 // MARK: - Panning Gesture Recognizer
 
-private extension SheetPresentationController {
+private extension SlideUpSheetPresentationController {
     @objc func panning(_ pan: UIPanGestureRecognizer) {
         guard let containerView = self.containerView, let presentedView = self.presentedView else {
             return
@@ -317,8 +313,8 @@ private extension SheetPresentationController {
 
 // MARK: - UIGestureRecognizerDelegate
 
-extension SheetPresentationController: UIGestureRecognizerDelegate {
-    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+extension SlideUpSheetPresentationController: UIGestureRecognizerDelegate {
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         guard let pan = gestureRecognizer as? UIPanGestureRecognizer, let scrollView = scrollView else {
             return true
         }
@@ -340,12 +336,12 @@ extension SheetPresentationController: UIGestureRecognizerDelegate {
         return false
     }
     
-    public func gestureRecognizer(_: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    func gestureRecognizer(_: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         scrollView?.panGestureRecognizer == otherGestureRecognizer
     }
 }
 
-private extension SheetPresentationController {
+private extension SlideUpSheetPresentationController {
     func registerKeyboardObservers() {
         let center = NotificationCenter.default
         center.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillShowNotification, object: nil)

@@ -6,9 +6,9 @@
 //
 
 import UIKit
-import SheetPresentationController
+import SlideUpSheet
 
-class BaseInheritedClassViewController: SheetBaseViewController {
+class BaseInheritedClassViewController: SlideUpSheetBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

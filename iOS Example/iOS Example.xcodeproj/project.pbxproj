@@ -13,7 +13,7 @@
 		2D67792729964D7E005F2561 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D67792529964D7E005F2561 /* Main.storyboard */; };
 		2D67792929964D7F005F2561 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D67792829964D7F005F2561 /* Assets.xcassets */; };
 		2D67792C29964D7F005F2561 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D67792A29964D7F005F2561 /* LaunchScreen.storyboard */; };
-		2DAC77B52997FB0D0048FD8E /* SheetPresentationController in Frameworks */ = {isa = PBXBuildFile; productRef = 2DAC77B42997FB0D0048FD8E /* SheetPresentationController */; };
+		2DAC77B52997FB0D0048FD8E /* SlideUpSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 2DAC77B42997FB0D0048FD8E /* SlideUpSheet */; };
 		2DAC77B92997FFD40048FD8E /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAC77B72997FFD40048FD8E /* CustomViewController.swift */; };
 		2DAC77BA2997FFD40048FD8E /* CustomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DAC77B82997FFD40048FD8E /* CustomViewController.xib */; };
 		2DAC77BF2997FFF40048FD8E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAC77BD2997FFF40048FD8E /* TableViewController.swift */; };
@@ -33,7 +33,7 @@
 		2D67792829964D7F005F2561 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D67792B29964D7F005F2561 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D67792D29964D7F005F2561 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2DAC77B32997FB060048FD8E /* SheetPresentationController */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SheetPresentationController; path = ..; sourceTree = "<group>"; };
+		2DAC77B32997FB060048FD8E /* SlideUpSheet */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SlideUpSheet; path = ..; sourceTree = "<group>"; };
 		2DAC77B72997FFD40048FD8E /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		2DAC77B82997FFD40048FD8E /* CustomViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomViewController.xib; sourceTree = "<group>"; };
 		2DAC77BD2997FFF40048FD8E /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -49,7 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DAC77B52997FB0D0048FD8E /* SheetPresentationController in Frameworks */,
+				2DAC77B52997FB0D0048FD8E /* SlideUpSheet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +99,7 @@
 		2DAC77B22997FB060048FD8E /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				2DAC77B32997FB060048FD8E /* SheetPresentationController */,
+				2DAC77B32997FB060048FD8E /* SlideUpSheet */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -168,7 +168,7 @@
 			);
 			name = "iOS Example";
 			packageProductDependencies = (
-				2DAC77B42997FB0D0048FD8E /* SheetPresentationController */,
+				2DAC77B42997FB0D0048FD8E /* SlideUpSheet */,
 			);
 			productName = "iOS Example";
 			productReference = 2D67791C29964D7E005F2561 /* iOS Example.app */;
@@ -453,9 +453,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2DAC77B42997FB0D0048FD8E /* SheetPresentationController */ = {
+		2DAC77B42997FB0D0048FD8E /* SlideUpSheet */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = SheetPresentationController;
+			productName = SlideUpSheet;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

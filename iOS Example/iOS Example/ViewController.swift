@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SheetPresentationController
+import SlideUpSheet
 
 class ViewController: UITableViewController {
 
@@ -29,21 +29,21 @@ class ViewController: UITableViewController {
     private func presentCustomLayoutExample() {
         let dvc = CustomViewController()
         dvc.modalPresentationStyle = .custom
-        dvc.transitioningDelegate = SheetSharedTransitioningDelegate.sharedDelegate()
+        dvc.transitioningDelegate = SlideUpSheetSharedTransitioningDelegate.sharedDelegate()
         present(dvc, animated: true)
     }
     
     private func presentTableViewExample() {
         let dvc = TableViewController()
         dvc.modalPresentationStyle = .custom
-        dvc.transitioningDelegate = SheetSharedTransitioningDelegate.sharedDelegate()
+        dvc.transitioningDelegate = SlideUpSheetSharedTransitioningDelegate.sharedDelegate()
         present(dvc, animated: true)
     }
     
     private func presentScrollViewExample() {
         let dvc = ScrollViewController()
         dvc.modalPresentationStyle = .custom
-        dvc.transitioningDelegate = SheetSharedTransitioningDelegate.sharedDelegate()
+        dvc.transitioningDelegate = SlideUpSheetSharedTransitioningDelegate.sharedDelegate()
         present(dvc, animated: true)
     }
     
