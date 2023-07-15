@@ -4,7 +4,7 @@ Custom presentation controller that slides up from the bottom and can be dismiss
 ![](Resources/examples.png)
 
 ### Installation
-SlideUpSheet is currently available either manually by cloning the project and adding the folder `SlideUpSheet` to your project, or you can use the Swift Package Manager (SPM).
+`SlideUpSheet` is currently available either manually by cloning the project and adding the folder `SlideUpSheet` to your project, or you can use the Swift Package Manager (SPM).
 
 - In Xcode, click File > Swift Packages > Add Package Dependency.
 - In the dialog that appears, enter the repository URL: https://github.com/iAmrMohamed/SlideUpSheet.git
@@ -12,7 +12,7 @@ SlideUpSheet is currently available either manually by cloning the project and a
 - Click Next and select the library `SlideUpSheet` checkbox, then click Finish and your're all set. 
 
 ### Requirements
-- Requires iOS 9.0+
+- Requires iOS 13+
 
 ### Usage
 
@@ -88,7 +88,7 @@ class ViewController: UIViewController {
     }
 }
 
-class CustomViewController: SlideUpSheetBaseViewController {
+class CustomViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
