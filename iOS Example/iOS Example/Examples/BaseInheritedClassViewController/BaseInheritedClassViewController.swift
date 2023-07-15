@@ -13,7 +13,8 @@ class BaseInheritedClassViewController: SlideUpSheetBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // prevents the swipe down to dismiss
+        slideUpSheet.allowsDismissing = false
     }
 
 

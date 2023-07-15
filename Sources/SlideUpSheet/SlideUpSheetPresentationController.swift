@@ -25,7 +25,7 @@
 import UIKit
 import Combine
 
-class SlideUpSheetPresentationController: UIPresentationController {
+open class SlideUpSheetPresentationController: UIPresentationController {
     private struct Constants {
         static let dismissVelocityLimit = CGFloat(500)
         static let handleViewSize = CGSize(width: 50, height: 5)
@@ -64,11 +64,11 @@ class SlideUpSheetPresentationController: UIPresentationController {
         return view
     }()
     
-    override var shouldPresentInFullscreen: Bool {
+    open override var shouldPresentInFullscreen: Bool {
         true
     }
     
-    override func presentationTransitionWillBegin() {
+    open override func presentationTransitionWillBegin() {
         super.presentationTransitionWillBegin()
         
         registerKeyboardObservers()
@@ -90,7 +90,7 @@ class SlideUpSheetPresentationController: UIPresentationController {
         })
     }
     
-    override func dismissalTransitionWillBegin() {
+    open override func dismissalTransitionWillBegin() {
         super.dismissalTransitionWillBegin()
         
         rubbingView.removeFromSuperview()
@@ -99,7 +99,7 @@ class SlideUpSheetPresentationController: UIPresentationController {
         })
     }
     
-    override var frameOfPresentedViewInContainerView: CGRect {
+    open override var frameOfPresentedViewInContainerView: CGRect {
         guard let containerView = containerView else { return .zero }
         var frame = containerView.frame
         
@@ -122,7 +122,7 @@ class SlideUpSheetPresentationController: UIPresentationController {
         return frame
     }
     
-    override func containerViewWillLayoutSubviews() {
+    open override func containerViewWillLayoutSubviews() {
         super.containerViewWillLayoutSubviews()
         guard let presentedView, presentedView.transform.isIdentity else {
             return
@@ -137,11 +137,11 @@ class SlideUpSheetPresentationController: UIPresentationController {
         }
     }
     
-    override func preferredContentSizeDidChange(forChildContentContainer _: UIContentContainer) {
+    open override func preferredContentSizeDidChange(forChildContentContainer _: UIContentContainer) {
         containerView?.setNeedsLayout()
     }
     
-    override func systemLayoutFittingSizeDidChange(forChildContentContainer _: UIContentContainer) {
+    open override func systemLayoutFittingSizeDidChange(forChildContentContainer _: UIContentContainer) {
         containerView?.setNeedsLayout()
     }
 }
@@ -259,13 +259,14 @@ private extension SlideUpSheetPresentationController {
         switch pan.state {
         case .began, .changed:
             
-            let newTranslation = CGAffineTransform(translationX: 0, y: {
-                if self.allowsDismissing {
-                    return translation.y > 0 ? translation.y : translation.y / 15
-                } else {
-                    return translation.y / 15
-                }
-            }())
+            let yTranslation: CGFloat
+            if allowsDismissing {
+                yTranslation = translation.y > 0 ? translation.y : translation.y / 15
+            } else {
+                yTranslation = translation.y / 15
+            }
+            
+            let newTranslation = CGAffineTransform(translationX: 0, y: yTranslation)
             
             presentedView.transform = newTranslation
             rubbingView.transform = newTranslation
@@ -314,7 +315,7 @@ private extension SlideUpSheetPresentationController {
 // MARK: - UIGestureRecognizerDelegate
 
 extension SlideUpSheetPresentationController: UIGestureRecognizerDelegate {
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         guard let pan = gestureRecognizer as? UIPanGestureRecognizer, let scrollView = scrollView else {
             return true
         }
@@ -336,7 +337,7 @@ extension SlideUpSheetPresentationController: UIGestureRecognizerDelegate {
         return false
     }
     
-    func gestureRecognizer(_: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    public func gestureRecognizer(_: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         scrollView?.panGestureRecognizer == otherGestureRecognizer
     }
 }

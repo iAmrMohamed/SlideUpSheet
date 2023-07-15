@@ -8,6 +8,11 @@
 import UIKit
 
 open class SlideUpSheetBaseViewController: UIViewController {
+    
+    public var slideUpSheet: SlideUpSheetPresentationController {
+        presentationController as! SlideUpSheetPresentationController
+    }
+    
     public convenience init() {
         self.init(nibName: nil, bundle: nil)
     }
